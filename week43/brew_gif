@@ -10,6 +10,8 @@ theme_set(theme_light())
 ```
 
 ```{r}
+state_full<-data.frame(state.abb,state.name)
+
 p<-beer_awards%>%
   full_join(state_full, by = c("state" = "state.abb"))%>%
   count(state.name, year)%>%
